@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ navOpen: false }">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Lwandiso Nunu">
+    <title>Mazz-Fuels ~ Business Solutions</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/a2e860f6f5.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body class="bg-[#FFFFFF] text-[#4B4B4B]">
+
+    <!-- HEADER -->
+    <header class="bg-[#003366] shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <a href="../index.html" class="flex items-center space-x-2">
+                <img src="images/logo.png" alt="Mazz-Fuels Logo" class="h-20 w-auto">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-4 items-center">
+                <a href="../index.html" class="text-white hover:text-[#007BFF]">Home</a>
+                <a href="../services.html" class="text-white hover:text-[#007BFF]">Services</a>
+                <a href="../business.html" class="text-white hover:text-[#007BFF] font-semibold underline">Business</a>
+                <a href="../download-app.html" class="text-white hover:text-[#007BFF]">Download App</a>
+                <a href="../blog.html" class="text-white hover:text-[#007BFF]">Blog</a>
+                <a href="../contact.html" class="text-white hover:text-[#007BFF]">Contact</a>
+                <a href="../about.html" class="text-white hover:text-[#007BFF]">About Us</a>
+            </nav>
+
+            <!-- Mobile Button -->
+            <button @click="navOpen = !navOpen" class="md:hidden text-white ml-3">
+                <svg x-show="!navOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+
+                <svg x-show="navOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                     viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- Mobile Nav -->
+        <div x-show="navOpen" class="md:hidden bg-[#003366] px-4 pt-2 pb-4 space-y-2">
+            <a href="../index.html" class="block text-white hover:text-[#007BFF]">Home</a>
+            <a href="../services.html" class="block text-white hover:text-[#007BFF]">Services</a>
+            <a href="../business.html" class="block text-white hover:text-[#007BFF] font-semibold underline">Business</a>
+            <a href="../download-app.html" class="block text-white hover:text-[#007BFF]">Download App</a>
+            <a href="../blog.html" class="block text-white hover:text-[#007BFF]">Blog</a>
+            <a href="../contact.html" class="block text-white hover:text-[#007BFF]">Contact</a>
+            <a href="../about.html" class="block text-white hover:text-[#007BFF]">About Us</a>
+        </div>
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <section class="py-20 px-6 lg:px-20 bg-[#FFFFFF]">
+        <div class="max-w-5xl mx-auto text-center mb-16">
+            <h1 class="text-4xl lg:text-5xl font-bold text-[#003366] mb-6">
+                Fueling Fleets, Powering Business
+            </h1>
+            <p class="text-[#4B4B4B] text-lg max-w-3xl mx-auto">
+                We empower businesses and fleet managers with reliable bulk fuel delivery, scheduled refueling, and tailored discounts.
+                Keep your operations running smoothly with Mazz Fuels’ trusted business solutions.
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center mb-20">
+
+            <!-- Bulk Fuel Delivery -->
+            <div class="bg-[#FFFFFF] border border-[#D9D9D9] rounded-2xl shadow-md p-8 hover:shadow-xl transition group">
+                <div class="text-5xl mb-4 text-[#007BFF] group-hover:text-[#003366] transition">
+                    <i class="fas fa-truck-loading"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#003366] mb-3">Bulk Fuel Delivery</h3>
+                <p class="text-[#4B4B4B] text-sm leading-relaxed">
+                    Get high-quality fuel delivered directly to your business location efficiently and safely.
+                </p>
+            </div>
+
+            <!-- Fleet Fueling Schedules -->
+            <div class="bg-[#FFFFFF] border border-[#D9D9D9] rounded-2xl shadow-md p-8 hover:shadow-xl transition group">
+                <div class="text-5xl mb-4 text-[#007BFF] group-hover:text-[#003366] transition">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#003366] mb-3">Fleet Fueling Schedules</h3>
+                <p class="text-[#4B4B4B] text-sm leading-relaxed">
+                    Keep your fleet on the move with customized refueling schedules tailored to your operations.
+                </p>
+            </div>
+
+            <!-- Loyalty & Discounts -->
+            <div class="bg-[#FFFFFF] border border-[#D9D9D9] rounded-2xl shadow-md p-8 hover:shadow-xl transition group">
+                <div class="text-5xl mb-4 text-[#007BFF] group-hover:text-[#003366] transition">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-[#003366] mb-3">Loyalty & Volume Discounts</h3>
+                <p class="text-[#4B4B4B] text-sm leading-relaxed">
+                    Enjoy exclusive pricing and loyalty benefits when you partner with Mazz Fuels for your fueling needs.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center">
+            <a href="../contact.html"
+               class="inline-block px-8 py-3 rounded-full text-white font-semibold transition-all duration-300 shadow-md hover:shadow-lg bg-gradient-to-r from-[#003366] to-[#007BFF] hover:from-[#007BFF] hover:to-[#003366]">
+                Partner with us today
+            </a>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#003366] text-white py-8 mt-10">
+        <div class="container mx-auto text-center space-y-4">
+            <p>&copy; <span id="year"></span> Mazz-Fuels. All rights reserved.</p>
+
+            <div class="space-x-4">
+                <a href="../index.html" class="hover:text-[#007BFF]">Home</a>
+                <a href="../services.html" class="hover:text-[#007BFF]">Services</a>
+                <a href="../business.html" class="hover:text-[#007BFF] font-semibold underline">Business</a>
+                <a href="../download-app.html" class="hover:text-[#007BFF]">Download App</a>
+                <a href="../blog.html" class="hover:text-[#007BFF]">Blog</a>
+                <a href="../contact.html" class="hover:text-[#007BFF]">Contact</a>
+                <a href="../about.html" class="hover:text-[#007BFF]">About Us</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
