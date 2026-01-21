@@ -6,30 +6,24 @@
   <meta name="author" content="Lwandiso Nunu">
   <title>Mazz Fuels</title>
 
-  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/app.css" />
 
-  <!-- Alpine.js -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="bg-[#FFFFFF] text-[#4B4B4B]">
 
-  <!-- Header -->
   <header class="bg-[#003366] shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
 
-      <!-- Logo -->
       <a href="index.html" class="flex items-center space-x-2">
         <img src="images/logo.png" alt="Mazz-Fuels Logo" class="h-20 w-auto">
       </a>
 
-      <!-- MOBILE: Login + Create Account (disabled) -->
       <div class="flex space-x-3 md:hidden">
-        <!-- Icons show but redirect to Coming Soon -->
+
         <button class="bg-green-600 p-2 rounded-full text-white cursor-not-allowed opacity-50">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
@@ -46,7 +40,6 @@
         </button>
       </div>
 
-      <!-- Desktop Nav -->
       <nav class="hidden md:flex space-x-4 items-center">
         <a href="index.html" class="text-white hover:text-[#007BFF]">Home</a>
         <a href="services.html" class="text-white hover:text-[#007BFF]">Services</a>
@@ -56,7 +49,6 @@
         <a href="contact.html" class="text-white hover:text-[#007BFF]">Contact</a>
         <a href="about.html" class="text-white hover:text-[#007BFF]">About Us</a>
 
-        <!-- Disabled buttons -->
         <button class="bg-green-600 p-2 rounded-full text-white opacity-50 cursor-not-allowed">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
                viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +67,6 @@
         </button>
       </nav>
 
-      <!-- Hamburger -->
       <button @click="open = !open" class="md:hidden text-white ml-3">
         <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
              viewBox="0 0 24 24" stroke="currentColor">
@@ -90,7 +81,6 @@
       </button>
     </div>
 
-    <!-- Mobile Menu -->
     <div x-show="open" class="md:hidden bg-[#003366] px-4 pt-2 pb-4 space-y-2">
       <a href="index.html" class="block text-white hover:text-[#007BFF]">Home</a>
       <a href="services.html" class="block text-white hover:text-[#007BFF]">Services</a>
@@ -100,7 +90,6 @@
       <a href="contact.html" class="block text-white hover:text-[#007BFF]">Contact</a>
       <a href="about.html" class="block text-white hover:text-[#007BFF]">About Us</a>
 
-      <!-- Disabled Login/Create -->
       <button class="w-full bg-green-600 text-white px-4 py-2 rounded-md opacity-50 cursor-not-allowed">
         Login (Coming Soon)
       </button>
@@ -111,10 +100,8 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main class="min-h-screen">
 
-    <!-- HERO -->
     <section
       x-data
       x-init="$el.classList.add('opacity-0'); setTimeout(()=> $el.classList.remove('opacity-0'), 40)"
@@ -137,14 +124,11 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="py-20 px-6 lg:px-20 bg-[#fff2f2]">
       <h2 class="text-3xl lg:text-4xl font-semibold text-center mb-12 text-[#003366]">Our Services (Preview)</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-        <!-- SERVICE CARD TEMPLATE (for all 4 cards) -->
-        <!-- Card 1 -->
         <div
           x-data="{ open:false }"
           x-init="$el.classList.add('opacity-0','scale-95'); setTimeout(()=> $el.classList.remove('opacity-0','scale-95'), 150)"
@@ -157,8 +141,6 @@
           <button @click="open = true" class="mt-5 px-6 py-3 rounded-lg text-white bg-gray-400 cursor-not-allowed w-full">
             Coming Soon
           </button>
-
-          <!-- Modal -->
           <div x-show="open" x-transition.opacity class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
             <div x-show="open" x-transition.scale class="bg-white rounded-xl p-6 max-w-md w-full text-center">
               <img src="images/services/fuel.jpg" class="w-full h-40 object-cover rounded mb-4">
@@ -171,8 +153,6 @@
           </div>
         </div>
 
-        <!-- Repeat same pattern for other service cards -->
-        <!-- LPG Gas -->
         <div x-data="{ open:false }" class="transition-all duration-700 bg-white p-6 rounded-xl shadow-md border border-[#D9D9D9] text-center hover:shadow-xl">
           <img src="images/services/gas.png" class="w-full h-40 object-cover rounded-lg mb-4 shadow">
           <h3 class="text-xl font-bold text-[#003366]">LP Gas Delivery</h3>
@@ -183,7 +163,6 @@
           </button>
         </div>
 
-        <!-- Car Wash -->
         <div x-data="{ open:false }" class="transition-all duration-700 bg-white p-6 rounded-xl shadow-md border border-[#D9D9D9] text-center hover:shadow-xl">
           <img src="images/services/wash.jpg" class="w-full h-40 object-cover rounded-lg mb-4 shadow">
           <h3 class="text-xl font-bold text-[#003366]">Mobile Car Wash</h3>
@@ -194,7 +173,6 @@
           </button>
         </div>
 
-        <!-- Maintenance -->
         <div x-data="{ open:false }" class="transition-all duration-700 bg-white p-6 rounded-xl shadow-md border border-[#D9D9D9] text-center hover:shadow-xl">
           <img src="images/services/maintenance.jpg" class="w-full h-40 object-cover rounded-lg mb-4 shadow">
           <h3 class="text-xl font-bold text-[#003366]">Vehicle Maintenance</h3>
@@ -208,7 +186,6 @@
       </div>
     </section>
 
-    <!-- CTA -->
     <section class="py-20 text-center px-6 lg:px-20 bg-[#dbdbd7]">
       <h2 class="text-3xl lg:text-4xl font-semibold mb-6 text-[#003366]">Exciting Features Coming Soon</h2>
       <p class="text-[#4B4B4B] mb-8">We are preparing to launch. Stay tuned!</p>
@@ -221,22 +198,25 @@
 
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#003366] text-white py-8 mt-10">
-    <div class="container mx-auto px-4 text-center space-y-4">
-      <p>&copy; <span id="year"></span> Mazz-Fuels. All rights reserved.</p>
+      <footer class="bg-[#003366] text-white py-8 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+        <p>&copy; <span id="year"></span> Mazz-Fuels. All rights reserved.</p>
 
-      <div class="space-x-4">
-        <a href="index.html" class="hover:text-[#007BFF]">Home</a>
-        <a href="services.html" class="hover:text-[#007BFF]">Services</a>
-        <a href="business.html" class="hover:text-[#007BFF]">Business</a>
-        <a href="download-app.html" class="hover:text-[#007BFF]">Download App</a>
-        <a href="blog.html" class="hover:text-[#007BFF]">Blog</a>
-        <a href="contact.html" class="hover:text-[#007BFF]">Contact</a>
-        <a href="about.html" class="hover:text-[#007BFF]">About Us</a>
-      </div>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="index.html" class="hover:text-[#007BFF]">Home</a>
+            <a href="services.html" class="hover:text-[#007BFF] font-semibold underline">Services</a>
+            <a href="business.html" class="hover:text-[#007BFF]">Business</a>
+            <a href="download-app.html" class="hover:text-[#007BFF]">Download App</a>
+            <a href="blog.html" class="hover:text-[#007BFF]">Blog</a>
+            <a href="contact.html" class="hover:text-[#007BFF]">Contact</a>
+            <a href="about.html" class="hover:text-[#007BFF]">About Us</a>
+        </div>
+
+        <p class="text-sm mt-4 text-center">
+            Website developed by <i>Lwandiso Nunu</i>
+        </p>
     </div>
-  </footer>
+</footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
